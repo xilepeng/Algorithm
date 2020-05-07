@@ -1,4 +1,4 @@
-```# Golang 数据结构与算法
+# Golang 数据结构与算法
 
 
 ```Golang
@@ -20,6 +20,7 @@ func quick_sort(nums []int, l, r int) {
 	quick_sort(nums, i+1, r)
 }
 ```
+
 ```Golang
 func merge_sort(nums []int, l, r int) {
 	if l >= r {
@@ -42,10 +43,11 @@ func merge_sort(nums []int, l, r int) {
 	copy(nums[l:r+1], tmp)
 }
 ```
+
 ```Golang
 func heap_sort(nums []int) {
 	lens := len(nums) - 1
-	for i := lens << 1; i >= 0; i-- {
+	for i := lens << 1; i >= 0; i-- {//建堆O(n)
 		down(nums, i, lens)
 	}
 	for j := lens; j >= 1; j-- {
@@ -54,7 +56,7 @@ func heap_sort(nums []int) {
 		down(nums, 0, lens)
 	}
 }
-func down(nums []int, i, lens int) {
+func down(nums []int, i, lens int) {//O(logn)
 	max := i
 	if i<<1+1 <= lens && nums[i<<1+1] > nums[max] {
 		max = i<<1 + 1
@@ -68,6 +70,7 @@ func down(nums []int, i, lens int) {
 	}
 }
 ```
+
 ```Golang
 func select_sort(nums []int) {
 	for i := 0; i < len(nums)-1; i++ {
@@ -78,6 +81,20 @@ func select_sort(nums []int) {
 			}
 		}
 		nums[i], nums[pos] = nums[pos], nums[i]
+	}
+}
+```
+
+```Golang
+func insert_sort(nums []int) {
+	for i := 1; i < len(nums); i++ {
+		tmp := nums[i]
+		j := i - 1
+		for j >= 0 && nums[j] > tmp {
+			nums[j+1] = nums[j] //向后移动1位
+			j--                 //向前扫描
+		}
+		nums[j+1] = tmp //添加到小于它的数的右边
 	}
 }
 ```
