@@ -1,4 +1,4 @@
-```# Golang 数据结构与算法
+# Golang 数据结构与算法
 
 
 ```Golang
@@ -20,6 +20,7 @@ func quick_sort(nums []int, l, r int) {
 	quick_sort(nums, i+1, r)
 }
 ```
+
 ```Golang
 func merge_sort(nums []int, l, r int) {
 	if l >= r {
@@ -42,6 +43,7 @@ func merge_sort(nums []int, l, r int) {
 	copy(nums[l:r+1], tmp)
 }
 ```
+
 ```Golang
 func heap_sort(nums []int) {
 	lens := len(nums) - 1
@@ -68,6 +70,7 @@ func down(nums []int, i, lens int) {
 	}
 }
 ```
+
 ```Golang
 func select_sort(nums []int) {
 	for i := 0; i < len(nums)-1; i++ {
