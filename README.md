@@ -1,4 +1,4 @@
-# Golang 数据结构与算法
+```# Golang 数据结构与算法
 
 
 ```Golang
@@ -65,6 +65,19 @@ func down(nums []int, i, lens int) {
 	if i != max {
 		nums[i], nums[max] = nums[max], nums[i]
 		down(nums, max, lens)
+	}
+}
+```
+```Golang
+func select_sort(nums []int) {
+	for i := 0; i < len(nums)-1; i++ {
+		pos := i
+		for j := i + 1; j < len(nums); j++ {
+			if nums[j] < nums[pos] {
+				pos = j
+			}
+		}
+		nums[i], nums[pos] = nums[pos], nums[i]
 	}
 }
 ```
