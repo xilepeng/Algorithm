@@ -1,6 +1,6 @@
 # Golang 数据结构与算法
 
-
+###7大排序
 ```Golang
 func quick_sort(nums []int, l, r int) {
 	if l >= r {
@@ -107,6 +107,23 @@ func bubble_sort(nums []int) {
 			if nums[j] > nums[j+1] {
 				nums[j], nums[j+1] = nums[j+1], nums[j]
 			}
+		}
+	}
+}
+```
+
+
+```Golang
+func count_sort(nums []int) {
+	cnt := [100001]int{}
+	for i := 0; i < len(nums); i++ {
+		cnt[nums[i]+50000] ++ //防止负数导致数组越界
+	}
+	for i, idx := 0, 0; i < 100001; i++ {
+		for cnt[i] > 0 {
+			nums[idx] = i - 50000
+			idx++
+			cnt[i] --
 		}
 	}
 }
