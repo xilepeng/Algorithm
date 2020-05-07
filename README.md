@@ -98,3 +98,16 @@ func insert_sort(nums []int) {
 	}
 }
 ```
+
+
+```Golang
+func bubble_sort(nums []int) {
+	for i := 0; i < len(nums); i++ {
+		for j := 0; j < len(nums)-i-1; j++ { //最后剩一个数不需比较-1
+			if nums[j] > nums[j+1] {
+				nums[j], nums[j+1] = nums[j+1], nums[j]
+			}
+		}
+	}
+}
+```
