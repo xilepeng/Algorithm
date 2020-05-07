@@ -1,6 +1,6 @@
 # Golang 数据结构与算法
 
-###7大排序
+### 7大排序
 ```Golang
 func quick_sort(nums []int, l, r int) {
 	if l >= r {
