@@ -19,8 +19,8 @@ func quick_sort(nums []int, l, r int) {
 	quick_sort(nums, l, i-1)
 	quick_sort(nums, i+1, r)
 }
-
-
+```
+```Golang
 func merge_sort(nums []int, l, r int) {
 	if l >= r {
 		return
@@ -41,8 +41,8 @@ func merge_sort(nums []int, l, r int) {
 	}
 	copy(nums[l:r+1], tmp)
 }
-
-
+```
+```Golang
 func heap_sort(nums []int) {
 	lens := len(nums) - 1
 	for i := lens << 1; i >= 0; i-- {
@@ -67,6 +67,4 @@ func down(nums []int, i, lens int) {
 		down(nums, max, lens)
 	}
 }
-
-
 ```
