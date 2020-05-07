@@ -21,7 +21,7 @@ func quick_sort(nums []int, l, r int) {
 }
 ```
 
-```
+```Golang
 func merge_sort(nums []int, l, r int) {
 	if l >= r {
 		return
